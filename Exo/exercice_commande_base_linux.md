@@ -1,5 +1,3 @@
-# Docker_cours
-cours
 **Exercice : Manipulation de Docker avec une image Alpine et GitHub**
 
 **Objectif :** 
@@ -14,7 +12,7 @@ Ce exercice vise à évaluer votre compréhension et votre maîtrise des command
 2. **Création d'un container Alpine :**
    - Utilisez la commande Docker pour créer un container basé sur l'image Alpine.
    ```
-   docker run -it --name exo1 alpine  
+   docker run -it --name exercice1 alpine  
    ```
    - Connectez-vous au shell du container nouvellement créé.
 
@@ -27,8 +25,8 @@ Ce exercice vise à évaluer votre compréhension et votre maîtrise des command
    ```
    apk add git
    apk add nano
-   git clone https://github.com/tammyluu/M2I-ECF-1
-   cd Docker-cours
+   git clone https://github.com/tammyluu/Docker_cours.git
+  cd Docker_cours/
    ```
 
 4. **Modification du contenu :**
@@ -44,11 +42,6 @@ Ce exercice vise à évaluer votre compréhension et votre maîtrise des command
    - Depuis votre terminal local, utilisez la commande Docker pour copier le fichier modifié depuis le container vers votre machine locale, dans un répertoire de votre choix.
 
    ```
-   docker cp exercice1:/root/M2I-ECF-1 C:\Users\Administrateur\Desktop\recup
-   ``
-.
-├── Exo
-│   └── exercice_image_docker.md
-└── README.md
+    docker cp exo1:Docker_cours/README.md C:\Users\Administrateur\Desktop\Docker_cours
+   ```
 
-2 directories, 2 files
