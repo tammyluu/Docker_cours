@@ -27,7 +27,7 @@ Ce exercice vise à évaluer votre compréhension et votre maîtrise des command
    ```
    apk add git
    apk add nano
-   git clone https://github.com/tammyluu/M2I-ECF-1
+   git clone https://github.com/tammyluu/Docker_cours
    cd Docker-cours
    ```
 
@@ -44,7 +44,7 @@ Ce exercice vise à évaluer votre compréhension et votre maîtrise des command
    - Depuis votre terminal local, utilisez la commande Docker pour copier le fichier modifié depuis le container vers votre machine locale, dans un répertoire de votre choix.
 
    ```
-   docker cp exercice1:/root/M2I-ECF-1 C:\Users\Administrateur\Desktop\recup
+   docker cp exercice1:/root/Docker_cours C:\Users\Administrateur\Desktop\test
    ``
 .
 ├── Exo
