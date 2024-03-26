@@ -42,6 +42,7 @@
    Ctrl S
    Ctrl X
    Exit
+   docker cp exo-container:/usr/share/nginx/html/index.html D:\01_ENV\WorkSpace\Docker_cours\Exo
    
 7. **Arrêt et suppression du conteneur :**
    - Arrêtez le conteneur.
