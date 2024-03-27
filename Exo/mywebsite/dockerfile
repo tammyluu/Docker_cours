@@ -1,0 +1,17 @@
+FROM nginx
+LABEL  version="0.1"
+MAINTAINER toto
+WORKDIR /usr/share/nginx/html/
+# 1er . : où est dockerfile
+# 2er . : /usr/share/nginx/html/
+COPY . .
+# on peut faire sans workdir "COPY ./usr/share/nginx/html/"
+#RUN apk update && apk add nano
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+
+# Pour construire l'imade
+#docker build --no-cache -t exo1 .
+
+#tester mon image
+#docker run  --name exo1test -p 5555:80 -d exo1 

@@ -1,0 +1,27 @@
+# Image de base 
+FROM alpine
+
+LABEL version="0.1"
+
+# Définir un Repertoire de travail du côté container : Linux => /root
+WORKDIR /root
+
+# Copie le repertoire courant vers le workdir chemin relative par rapport Dockerfile
+COPY . .
+
+# Lancement d'une commande
+RUN apk update && apk add nano
+
+# port
+EXPOSE 
+
+
+
+# Définir la commande par défaut (CMD & ENtryPoint : quand image devient à container)
+CMD ["cat", "monfichier.txt"]
+
+# terminal :
+# docker build -t demo1 .
+#demo1 nom d'image
+# . où je suis, au réoertoir courant
+# docker run  --name firstimage -it

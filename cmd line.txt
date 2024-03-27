@@ -25,3 +25,54 @@ mon_fichier.txt
 ~ # cat mon_fichier.txt
 coucou, je suis un lapin!!!
 ~ #
+
+=====================================================================================================================
+
+docker volume create mywebsite
+
+docker volume ls
+
+docker run --name server-website-apache -d -p 5000:80 -v website:/usr/local/apache2/htdocs httpd
+
+=> /usr/local/apache2/htdocs httpd:  dans le dockerHub
+
+
+
+========================================================
+Bind Mount
+docker run --name server-web-nginx -d -p 3001:80 -v /usr/share/nginx/html nginx
+
+docker volume ls
+
+docker run -it --name demo-bind-mount -v C:\Users\Administrateur\Desktop\test:/root alpine
+
+cd /root
+
+ls -l
+ls -la
+cat nomdefichier.ext
+
+
+=======================
+ping
+ping google.fr
+docker network create my-network
+
+docker network ls
+
+docker network inspect my-network
+=> containers : 0
+
+docker run --name machinea -d --network my-network nginx
+
+docker network inspect my-network
+=> containers : 1
+
+docker run --name machineb -d --network my-network nginx
+
+docker network inspect my-network
+=> containers : 2
+
+
+
+
