@@ -1,0 +1,43 @@
+
+version: '3'
+ 
+services:
+  db:
+    image: mysql
+    container_name: bdd
+    volumes:
+      - dbdata:/var/lib/mysql
+      #execute script sql
+      - ./data.sql:/docker-entrypoint-initdb.d/data.sql
+      # car fichier nomé data.sql
+    restart : always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: root
+      MYSQL_PASSWORD: admin
+    networks:
+      - mysql-phpmyadmin
+
+  phpmyadmin:
+    depends_on:
+      - db #nom de service
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8888:80
+  
+    environment:
+      PMA_HOST: db
+    networks:
+      - mysql-phpmyadmin
+  
+    
+networks:
+  mysql-phpmyadmin:
+    driver: bridge
+   
+          
+volumes:
+  dbdata:

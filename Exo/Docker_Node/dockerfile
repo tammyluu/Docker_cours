@@ -1,0 +1,26 @@
+FROM node 
+
+WORKDIR /app
+
+ENV PORT=3002 
+
+COPY package*.json ./
+
+RUN npm install 
+
+COPY . .
+
+# chercher la porte dans app.js (à la fin )
+EXPOSE ${PORT}
+
+CMD [ "node", "app.js" ]
+
+
+# command construire l'image
+#docker build -t --no-cache apptodo .
+
+# commande pour lancer un container avec avec image
+# docker run -p 5000:3001 -d apptodo
+# docker run -e PORT=5000 -p 5005:5000 d apptodo-env
+# docker run -e PORT=5000 -p 5001:3002 d apptodo-env
+
