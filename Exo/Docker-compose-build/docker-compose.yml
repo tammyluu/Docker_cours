@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  test-build:
+    build: 
+    
+    volumes:
+      #instructions dans dockerfile, "copie" compliqué 
+      context: ./monchemin-projet
+      dockerfile: Dockerfile
+
+      
