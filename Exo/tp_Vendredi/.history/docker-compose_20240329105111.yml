@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  dbmy:
+    image: "mysql:8.0"
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+  phpmyadmin:
+    image: "phpmyadmin/phpmyadmin"
+    ports:
+      - "8080:80"
+    links:
+      - db
+  backend:
+    build: ./backend
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  db_data:

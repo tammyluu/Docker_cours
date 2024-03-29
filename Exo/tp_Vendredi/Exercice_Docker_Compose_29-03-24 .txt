@@ -1,0 +1,18 @@
+Exercice Docker Compose :
+
+En utilisant Docker Compose, l'objectif est de containeriser une application full-stack :
+
+- Base de données :
+Mysql avec une possibilité d'administration (par exemple, phpMyAdmin).
+
+- Backend :
+API Java avec au minimum un CRUD simple sur au moins une entité (pouvant être testé avec Postman).
+
+- Frontend :
+Application React avec au minimum la capacité de visualiser l'intégralité des entités de notre API backend (tableau, card, ou autre...).
+
+Pour la partie base de données, nous utiliserons des images déjà disponibles sur Docker Hub. Pour la partie frontend et backend, les projets auront un Dockerfile que notre Docker Compose utilisera pour construire les images et démarrer les services.
+
+Nous placerons l'ensemble des services sur un même réseau.
+
+Nous veillerons à ce que les données de notre application full-stack ne soient pas perdues lors de l'arrêt de notre Docker Compose.
